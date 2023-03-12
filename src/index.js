@@ -19,6 +19,12 @@ client.on('ready', c => {
     console.log(`Logged in as ${c.user.tag}!`);
 });
 
+client.on('messageCreate', msg=>{
+
+    console.log(msg);
+
+});
+
 
 // log the client
 client.login(TOKEN);
