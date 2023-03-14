@@ -1,21 +1,30 @@
-//! bin/node.js
+//! bin/node.js 
 
 // Header todo :)
 
-const Discord = require('discord.js');
+const { Client } = require('discord.js');
+const fs = require('fs.js');
+const path = require('path.js');
 const { TOKEN } = require('../config.json');
 
 // creating the client for the bot 
-const client = new Discord.Client({
+const client = new Client({
     intents: [
         Discord.GatewayIntentBits.Guilds,
         Discord.GatewayIntentBits.GuildMessages
     ]
 }
 );
+client.commands = new Discord.Collection();
+
+// create the command handling
+
+const commandsPath = path.join(__dirname, 'commands');
+
+
 
 // check the client is on
-client.on('ready', c => {
+client.once('ready', c => {
     console.log(`Logged in as ${c.user.tag}!`);
 });
 
