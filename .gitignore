@@ -1,3 +1,5 @@
 /node_modules
 config.json
-test.c
+test.*
+*.c
+*.exe
