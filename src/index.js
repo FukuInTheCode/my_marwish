@@ -7,6 +7,8 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { TOKEN } = require('../config.json');
 
+
+
 // creating the client for the bot 
 const client = new Client({
     intents: [
@@ -60,5 +62,7 @@ client.on(Events.InteractionCreate, async interaction => {
 		}
 	}
 });
+
+
 // log the client
 client.login(TOKEN);
